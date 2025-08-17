@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80h3m14n Hub</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117;
+            color: #e6edf3;
+        }
+
+        header {
+            background: #161b22;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #30363d;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #58a6ff;
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: #e6edf3;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #58a6ff;
+        }
+
+        section {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #58a6ff;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: #58a6ff;
+        }
+
+        .card p {
+            margin: 0 0 1rem 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #e6edf3;
+            font-weight: bold;
+            border: 1px solid #58a6ff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .card a:hover {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #30363d;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>80h3m14n Hub</h1>
+        <nav>
+            <a href="#redteam">Red Team</a>
+            <a href="#journals">Journals</a>
+            <a href="#tools">Tools</a>
+        </nav>
+    </header>
+
+    <section id="redteam">
+        <h2>Red Team</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>PackXtract</h3>
+                <p>Python obfuscation/packing tool for reverse engineering and analysis.</p>
+                <a href="https://github.com/80h3m14n/PackXtract" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Red Team Tools</h3>
+                <p>A collection of offensive security tools and scripts for pentesting.</p>
+                <a href="https://github.com/80h3m14n/red-team-tools" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>RE Toolkit</h3>
+                <p>Mini Reverse Engineering toolkit for metadata, strings, entropy, and disassembly.</p>
+                <a href="https://github.com/80h3m14n/re_toolkit" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="journals">
+        <h2>Journals</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>Cyber Security Book</h3>
+                <p>A documentation of my cybersecurity journey, notes, and experiments.</p>
+                <a href="https://github.com/80h3m14n/cyber-security-book" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Vulnerability Playbook</h3>
+                <p>A structured playbook of vulnerable code samples and their secure fixes.</p>
+                <a href="https://github.com/80h3m14n/Vulnerability-Playbook" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools">
+        <h2>Tools</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>Encryptz</h3>
+                <p>A simple CLI tool for encrypting and decrypting files with multiple algorithms.</p>
+                <a href="https://github.com/80h3m14n/encryptz" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Terminal Emulator Portfolio</h3>
+                <p>A web-based terminal emulator style portfolio, built with JavaScript.</p>
+                <a href="https://github.com/80h3m14n/terminal-emulator-portfolio" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Tech Companies in Kenya</h3>
+                <p>A curated list of tech companies, startups, and communities in Kenya.</p>
+                <a href="https://github.com/80h3m14n/Tech-companies-in-Kenya" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Built by 80h3m14n • Hosted on GitHub Pages</p>
+    </footer>
+
+</body>
+
+</html>
