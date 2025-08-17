@@ -156,38 +156,62 @@ window.addEventListener("resize", () => {
   }
 });
 
-// Footer scroll visibility functionality
+// Footer scroll visibility and scroll indicators functionality
 const footer = document.querySelector("footer");
 const mainSections = document.querySelector(".main-sections");
+const content = document.querySelector(".content");
+const scrollHint = document.getElementById("scrollHint");
 
-function checkFooterVisibility() {
-  if (!mainSections || !footer) return;
+function checkScrollIndicators() {
+  if (!mainSections || !footer || !content) return;
 
   const scrollTop = mainSections.scrollTop;
   const scrollHeight = mainSections.scrollHeight;
   const clientHeight = mainSections.clientHeight;
 
-  // Show footer when user is near the bottom (within 100px)
+  // Check if there's more content to scroll
+  const hasMoreContent = scrollHeight > clientHeight;
   const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
+  const isAtTop = scrollTop < 50;
 
+  // Show footer when user is near the bottom
   if (isNearBottom) {
     footer.classList.add("visible");
   } else {
     footer.classList.remove("visible");
   }
+
+  // Show scroll indicators when there's more content and user is at top
+  if (hasMoreContent && isAtTop && scrollHint) {
+    content.classList.add("has-more-content");
+    scrollHint.classList.add("visible");
+  } else {
+    content.classList.remove("has-more-content");
+    if (scrollHint) {
+      scrollHint.classList.remove("visible");
+    }
+  }
+
+  // Hide scroll hint after user scrolls a bit
+  if (scrollTop > 100 && scrollHint) {
+    scrollHint.classList.remove("visible");
+  }
 }
 
 // Debounced scroll function for better performance
-const debouncedFooterCheck = debounce(checkFooterVisibility, 100);
+const debouncedScrollCheck = debounce(checkScrollIndicators, 100);
 
 // Add scroll listener to main content area
 if (mainSections) {
-  mainSections.addEventListener("scroll", debouncedFooterCheck);
+  mainSections.addEventListener("scroll", debouncedScrollCheck);
 }
+
+// Initial check on load
+setTimeout(checkScrollIndicators, 500);
 
 // Also check on mobile menu scroll (if applicable)
 if (window.innerWidth <= 768) {
-  window.addEventListener("scroll", debouncedFooterCheck);
+  window.addEventListener("scroll", debouncedScrollCheck);
 }
 
 console.log("🚀 Modern portfolio loaded successfully!");
