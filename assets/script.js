@@ -156,4 +156,38 @@ window.addEventListener("resize", () => {
   }
 });
 
+// Footer scroll visibility functionality
+const footer = document.querySelector("footer");
+const mainSections = document.querySelector(".main-sections");
+
+function checkFooterVisibility() {
+  if (!mainSections || !footer) return;
+
+  const scrollTop = mainSections.scrollTop;
+  const scrollHeight = mainSections.scrollHeight;
+  const clientHeight = mainSections.clientHeight;
+
+  // Show footer when user is near the bottom (within 100px)
+  const isNearBottom = scrollTop + clientHeight >= scrollHeight - 100;
+
+  if (isNearBottom) {
+    footer.classList.add("visible");
+  } else {
+    footer.classList.remove("visible");
+  }
+}
+
+// Debounced scroll function for better performance
+const debouncedFooterCheck = debounce(checkFooterVisibility, 100);
+
+// Add scroll listener to main content area
+if (mainSections) {
+  mainSections.addEventListener("scroll", debouncedFooterCheck);
+}
+
+// Also check on mobile menu scroll (if applicable)
+if (window.innerWidth <= 768) {
+  window.addEventListener("scroll", debouncedFooterCheck);
+}
+
 console.log("🚀 Modern portfolio loaded successfully!");
