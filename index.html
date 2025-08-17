@@ -5,113 +5,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>80h3m14n Hub</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 
 <body>
-    <header>
-        <a href="#" style="text-decoration:none;">
-            <h1>80h3m14n Hub</h1>
-        </a>
-        <nav>
-            <a href="#whoami" aria-label="About Me">whoami</a>
-            <a href="#redteam" aria-label="Red Team Proects">Red Team</a>
-            <a href="#journals" aria-label="Journals">Journals</a>
-            <a href="#tools" aria-label="Tools">Tools</a>
-        </nav>
-    </header>
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+        ☰
+    </button>
 
-    <section id="whoami">
-        <h2>whoami</h2>
-        <p>Hey, I’m <strong>80h3m14n</strong>, an IT student, cybersecurity hobbyist, and part-time
-            blockchain & A.I developer. I build tools, write playbooks, and dive into red team & reverse engineering projects.
-            This site showcases my projects, notes, and experiments.</p>
-    </section>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
-    <section id="filters">
-        <div class="filter-bar">
-            <input type="text" id="searchBox" placeholder="Search projects by name or tag...">
+    <nav class="sidebar" id="sidebar">
+        <h1>80h3m14n Hub</h1>
+        <a href="#about">👤 <span>whoami</span></a>
+        <a href="#redteam">🛡 <span>Security</span></a>
+        <a href="#tools">⚙️ <span>Tools</span></a>
+        <a href="#journals">📚 <span>Learning</span></a>
+        <a href="#aspirations">🚀 <span>Aspirations</span></a>
+    </nav>
+
+    <main class="content">
+        <div class="main-sections">
+            <section id="about">
+                <h2>whoami</h2>
+                <div class="card">
+                    <p>Hey, I'm <strong>80h3m14n</strong>, an IT student, cybersecurity hobbyist, and part-time
+                        blockchain &
+                        A.I developer. I build tools, write playbooks, and dive into red team & reverse engineering
+                        projects. This site showcases my projects and experiments.</p>
+                </div>
+            </section>
+
+            <section id="filters">
+                <div class="filter-bar">
+                    <input type="text" id="searchBox" placeholder="🔍 Search projects by name or tag...">
+                </div>
+            </section>
+
+            <section id="redteam">
+                <h2>Security</h2>
+                <div class="card" data-tags="redteam python obfuscation">
+                    <h3>PackXtract</h3>
+                    <p>Python obfuscation/packing tool for reverse engineering and analysis.</p>
+                    <a href="https://github.com/80h3m14n/PackXtract" target="_blank" rel="noopener noreferrer">View
+                        Project</a>
+                </div>
+                <div class="card" data-tags="redteam pentest offensive">
+                    <h3>Red Team Tools</h3>
+                    <p>A collection of offensive security tools and scripts for pentesting.</p>
+                    <a href="https://github.com/80h3m14n/red-team-tools" target="_blank" rel="noopener noreferrer">View
+                        Project</a>
+                </div>
+                <div class="card" data-tags="reverse-engineering toolkit analysis">
+                    <h3>RE Toolkit</h3>
+                    <p>Mini Reverse Engineering toolkit for metadata, strings, entropy, and disassembly.</p>
+                    <a href="https://github.com/80h3m14n/re_toolkit" target="_blank" rel="noopener noreferrer">View
+                        Project</a>
+                </div>
+            </section>
+
+            <section id="journals">
+                <h2>Learning</h2>
+                <div class="card" data-tags="notes documentation cybersecurity">
+                    <h3>Cyber Security Book</h3>
+                    <p>A documentation of my cybersecurity journey, notes, and experiments.</p>
+                    <a href="https://github.com/80h3m14n/cyber-security-book" target="_blank"
+                        rel="noopener noreferrer">View
+                        Project</a>
+                </div>
+                <div class="card" data-tags="playbook vulnerabilities fixes">
+                    <h3>Vulnerability Playbook</h3>
+                    <p>A structured playbook of vulnerable code samples and their secure fixes.</p>
+                    <a href="https://github.com/80h3m14n/Vulnerability-Playbook" target="_blank"
+                        rel="noopener noreferrer">View Project</a>
+                </div>
+            </section>
+
+            <section id="tools">
+                <h2>Tools</h2>
+                <div class="card" data-tags="encryption cli security">
+                    <h3>Encryptz</h3>
+                    <p>A simple CLI tool for encrypting and decrypting files with multiple algorithms.</p>
+                    <a href="https://github.com/80h3m14n/encryptz" target="_blank" rel="noopener noreferrer">View
+                        Project</a>
+                </div>
+                <div class="card" data-tags="portfolio javascript terminal">
+                    <h3>Terminal Emulator Portfolio</h3>
+                    <p>A web-based terminal emulator style portfolio, built with JavaScript.</p>
+                    <a href="https://github.com/80h3m14n/terminal-emulator-portfolio" target="_blank"
+                        rel="noopener noreferrer">View Project</a>
+                </div>
+                <div class="card" data-tags="list kenya tech companies">
+                    <h3>Tech Companies in Kenya</h3>
+                    <p>A curated list of tech companies, startups, and communities in Kenya.</p>
+                    <a href="https://github.com/80h3m14n/Tech-companies-in-Kenya" target="_blank"
+                        rel="noopener noreferrer">View Project</a>
+                </div>
+                <div class="card" data-tags="python automation">
+                    <h3>Python recon-automation</h3>
+                    <p>An automated Script to perform a reconnaissance on a website for bug hunting purposes.</p>
+                    <a href="https://github.com/80h3m14n/recon-automation" target="_blank">View Project</a>
+                </div>
+                <div class="card" data-tags="social media downloader">
+                    <h3>Socialmedia-downloader tg bot</h3>
+                    <p>A telegram bot used to download social media files from apps such as Youtube, x, facebook,
+                        instagram, pintrest, snapchat etc</p>
+                    <a href="https://github.com/80h3m14n/socialmedia-downloader-telegram-bot" target="_blank">View
+                        Project</a>
+                </div>
+                <div class="card" data-tags="personal portfolio">
+                    <h3>Personal Portfolio website</h3>
+                    <p>A simple static personal portfolio website built using plain HTML, CSS, and JavaScript.</p>
+                    <a href="https://github.com/80h3m14n/Personal-Portfolio" target="_blank"
+                        rel="noopener noreferrer">View Project</a>
+                </div>
+            </section>
+
+            <section id="aspirations">
+                <h2>Aspirations & Future Projects</h2>
+                <p>Here I share my goals, upcoming ideas, and the technologies I plan to explore next.</p>
+                <ul style="list-style-type: none;">
+                    <li>🎯Develop advanced AI-powered security tools</li>
+                    <li>🎯Contribute to open-source blockchain projects</li>
+                    <li>🎯Build a comprehensive cybersecurity learning platform</li>
+                    <li>🎯Explore automation in cloud infrastructure</li>
+                    <li>🎯Dive deeper into AI-assisted reverse engineering and threat analysis.</li>
+                    <li>🎯Build advanced red team frameworks</li>
+                </ul>
+                <p>Btw, I am an aspiring offensive security engineer and always open to collaborations.</p>
+            </section>
         </div>
-    </section>
 
-    <section id="redteam">
-        <h2>Red Team</h2>
-        <div class="project-grid">
-            <div class="card" data-tags="redteam python obfuscation">
-                <h3>PackXtract</h3>
-                <p>Python obfuscation/packing tool for reverse engineering and analysis.</p>
-                <a href="https://github.com/80h3m14n/PackXtract" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="redteam pentest offensive">
-                <h3>Red Team Tools</h3>
-                <p>A collection of offensive security tools and scripts for pentesting.</p>
-                <a href="https://github.com/80h3m14n/red-team-tools" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="reverse-engineering toolkit analysis">
-                <h3>RE Toolkit</h3>
-                <p>Mini Reverse Engineering toolkit for metadata, strings, entropy, and disassembly.</p>
-                <a href="https://github.com/80h3m14n/re_toolkit" target="_blank">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="journals">
-        <h2>Journals</h2>
-        <div class="project-grid">
-            <div class="card" data-tags="notes documentation cybersecurity">
-                <h3>Cyber Security Book</h3>
-                <p>A documentation of my cybersecurity journey, notes, and experiments.</p>
-                <a href="https://github.com/80h3m14n/cyber-security-book" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="playbook vulnerabilities fixes">
-                <h3>Vulnerability Playbook</h3>
-                <p>A structured playbook of vulnerable code samples and their secure fixes.</p>
-                <a href="https://github.com/80h3m14n/Vulnerability-Playbook" target="_blank">View Project</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools">
-        <h2>Tools</h2>
-        <div class="project-grid">
-            <div class="card" data-tags="encryption cli security">
-                <h3>Encryptz</h3>
-                <p>A simple CLI tool for encrypting and decrypting files with multiple algorithms.</p>
-                <a href="https://github.com/80h3m14n/encryptz" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="portfolio javascript terminal">
-                <h3>Terminal Emulator Portfolio</h3>
-                <p>A web-based terminal emulator style portfolio, built with JavaScript.</p>
-                <a href="https://github.com/80h3m14n/terminal-emulator-portfolio" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="list kenya tech companies">
-                <h3>Tech Companies in Kenya</h3>
-                <p>A curated list of tech companies, startups, and communities in Kenya.</p>
-                <a href="https://github.com/80h3m14n/Tech-companies-in-Kenya" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="python automation">
-                <h3>Python recon-automation</h3>
-                <p>An automated Script to perform a reconnaissance on a website for bug hunting purposes.</p>
-                <a href="https://github.com/80h3m14n/recon-automation" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="python automation">
-                <h3>Socialmedia-downloader tg bot</h3>
-                <p>A telegram bot used to download social media files from apps such as Youtube, x, facebook,
-                instagram, pintrest, snapchat etc</p>
-                <a href="https://github.com/80h3m14n/socialmedia-downloader-telegram-bot" target="_blank">View Project</a>
-            </div>
-            <div class="card" data-tags="python automation">
-                <h3>Personal Portfolio website</h3>
-                <p>A simple static personal portfolio website built using plain HTML, CSS, and JavaScript.</p>
-                <a href="https://github.com/80h3m14n/Personal-Portfolio" target="_blank">View Project</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>Built by <a href="https://github.com/80h3m14n">80h3m14n</a> • <a
-                href="https://docs.github.com/en/pages">Hosted on GitHub Pages</a></p>
-    </footer>
+        <footer>
+            <p>Built with ❤️ by <a href="https://github.com/80h3m14n" target="_blank"
+                    rel="noopener noreferrer">80h3m14n</a> •
+                <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener noreferrer">Hosted on GitHub
+                    Pages</a>
+            </p>
+        </footer>
+    </main>
 
     <script src="assets/script.js"></script>
 </body>
